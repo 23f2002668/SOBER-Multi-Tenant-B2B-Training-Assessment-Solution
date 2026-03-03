@@ -13,25 +13,3 @@ python-dotenv
 
 # Database
 SQLAlchemy==2.0.29
-
-# Security
-Werkzeug==3.0.2
-bcrypt==4.1.2
-python-dotenv==1.0.1
-
-# Data processing
-numpy==1.26.4
-pandas==2.2.2
-
-# PDF generation
-reportlab==4.2.2
-
-# Image processing
-Pillow==10.3.0
-
-# Email
-blinker==1.7.0
-
-# Utilities
-python-dateutil==2.9.0.post0
-typing-extensions==4.11.0
