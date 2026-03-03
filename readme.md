@@ -27,12 +27,12 @@ A comprehensive **multi-tenant B2B SaaS platform** for corporate training and em
 - **Responsive Design**: Works on desktop, tablet, and mobile
 
 ## 🏗️ Architecture
-
+![Architecture](https://github.com/23f2002668/SOBER-Multi-Tenant-B2B-Training-Assessment-Solution/blob/main/Architecture.png)
 
 
 ## 📊 Database Schema
 
-![Database Schema](./docs/ER_Diagram.png)
+![Database Schema](https://github.com/23f2002668/SOBER-Multi-Tenant-B2B-Training-Assessment-Solution/blob/main/ER-Diagram.png)
 
 ### Core Tables:
 - **CompanyRegistration**: Tenant companies with authentication
@@ -44,6 +44,15 @@ A comprehensive **multi-tenant B2B SaaS platform** for corporate training and em
 - **Subscriptions**: Plan definitions with quotas
 - **CompanyDetails**: Tracks current usage per company
 - **Scores/Ratings**: Performance tracking
+
+## Entitlement Decision Flow
+![Entitlement Decision Flow](https://github.com/23f2002668/SOBER-Multi-Tenant-B2B-Training-Assessment-Solution/blob/main/Entitlement%20Decision%20Flow.png)
+
+
+## Handling Race Condition
+
+![Handling Race Condition](https://github.com/23f2002668/SOBER-Multi-Tenant-B2B-Training-Assessment-Solution/blob/main/Race%20Condition%20Prevention.png)
+
 
 ## 🚀 Getting Started
 
