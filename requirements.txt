@@ -1,0 +1,38 @@
+
+---
+
+## **requirements.txt**
+
+```txt
+# Core dependencies
+Flask==2.3.3
+Flask-CORS==4.0.0
+Flask-SQLAlchemy==3.1.1
+Flask-JWT-Extended==4.6.0
+Flask-Mail==0.9.1
+Flask-Login==0.6.3
+
+# Database
+SQLAlchemy==2.0.29
+
+# Security
+Werkzeug==3.0.2
+bcrypt==4.1.2
+python-dotenv==1.0.1
+
+# Data processing
+numpy==1.26.4
+pandas==2.2.2
+
+# PDF generation
+reportlab==4.2.2
+
+# Image processing
+Pillow==10.3.0
+
+# Email
+blinker==1.7.0
+
+# Utilities
+python-dateutil==2.9.0.post0
+typing-extensions==4.11.0

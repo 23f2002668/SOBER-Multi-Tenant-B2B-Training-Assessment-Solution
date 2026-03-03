@@ -1,0 +1,366 @@
+<app-header></app-header>
+
+<div class="min-h-screen w-full flex items-start justify-center bg-gradient-to-br from-pink-500 via-purple-500 to-indigo-600 p-6 relative">
+
+  <!-- Signup Card -->
+  <div class="w-full max-w-4xl bg-white rounded-3xl shadow-xl border-2 border border-white overflow-hidden mt-22 mb-10">
+
+    <!-- Header -->
+    <div class="bg-gradient-to-r from-purple-600 via-pink-500 to-rose-500 text-white p-8 text-center">
+      <h1 class="text-3xl sm:text-4xl font-bold mb-2">Create Your Account</h1>
+      <p class="text-lg text-purple-100">Join our learning community today!</p>
+      
+    </div>
+
+    <!-- Form Content -->
+    <div class="p-8 sm:p-10">
+
+      <form class="space-y-6">
+
+        <!-- Two-column grid for inputs -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+          <!-- Full Name -->
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-1">Full Name</label>
+            <input type="text" placeholder="Enter Your Name" required="required"
+                   class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-400 transition"/>
+          </div>
+
+          <!-- Father's Name -->
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-1">Father's Name</label>
+            <input type="text" placeholder="Enter Your Name" required="required"
+                   class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-400 transition"/>
+          </div>
+
+          <!-- Aadhaar -->
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-1">Aadhaar No. / VID</label>
+            <input type="text" placeholder="Enter Your Name" required="required"
+                   class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-400 transition"/>
+          </div>
+
+          <!-- Email -->
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+            <input type="email" placeholder="Enter Your Email" required="required"
+                   class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-400 transition"/>
+          </div>
+
+          <!-- Phone -->
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-1">Phone Number with Country Code</label>
+            <input type="tel" placeholder="+1 1234567890" required="required"
+                   class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-400 transition"/>
+          </div>
+
+          <!-- Date of Birth -->
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-1">Date of Birth</label>
+            <input type="date" required="required" class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-400 transition"/>
+          </div>
+
+          <!-- Gender -->
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-1">Gender</label>
+            <select required="required" class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-400 transition">
+              <option value="">Select Gender</option>
+              <option>Male</option>
+              <option>Female</option>
+              <option>Other</option>
+            </select>
+          </div>
+
+          <!-- Institution -->
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-1">University / Institution</label>
+            <input type="text" placeholder="University / Institution" required="required"
+                   class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-400 transition"/>
+          </div>
+
+          <!-- Level of Education -->
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-1">Current / Highest Level of Education</label>
+            <select required="required" class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-400 transition">
+              <option value="">Select Level</option>
+              <option>Intermediate or Equivalent (Must completed)</option>
+              <option>Undergraduate</option>
+              <option>Postgraduate</option>
+              <option>Postgraduate Diploma</option>
+              <option>Research / Doctorate</option>
+            </select>
+          </div>
+
+          <!-- Course or Stream -->
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-1">Course</label>
+            <input type="text" placeholder="B. Tech, B.S., B.Sc, MBA, M. Tech, etc." required="required"
+                   class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-400 transition"/>
+          </div>
+
+          <!-- Learning Goal -->
+          <div class="md:col-span-2">
+            <label class="block text-sm font-medium text-gray-700 mb-1">Learning Goal</label>
+            <textarea rows="3" placeholder="What do you want to achieve?" required="required"
+                      class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-400 transition"></textarea>
+          </div>
+
+          <!-- Country -->
+                    <div>
+            <label class="block text-sm font-medium text-gray-700 mb-1">Country</label>
+            <select required="required" class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-400 transition">
+              <option value="">Select Country</option>
+              <option value="Afghanistan">Afghanistan</option>
+              <option value="Albania">Albania</option>
+              <option value="Algeria">Algeria</option>
+              <option value="Andorra">Andorra</option>
+              <option value="Angola">Angola</option>
+              <option value="Antigua and Barbuda">Antigua and Barbuda</option>
+              <option value="Argentina">Argentina</option>
+              <option value="Armenia">Armenia</option>
+              <option value="Australia">Australia</option>
+              <option value="Austria">Austria</option>
+              <option value="Azerbaijan">Azerbaijan</option>
+              <option value="Bahamas">Bahamas</option>
+              <option value="Bahrain">Bahrain</option>
+              <option value="Bangladesh">Bangladesh</option>
+              <option value="Barbados">Barbados</option>
+              <option value="Belarus">Belarus</option>
+              <option value="Belgium">Belgium</option>
+              <option value="Belize">Belize</option>
+              <option value="Benin">Benin</option>
+              <option value="Bhutan">Bhutan</option>
+              <option value="Bolivia">Bolivia</option>
+              <option value="Bosnia and Herzegovina">Bosnia and Herzegovina</option>
+              <option value="Botswana">Botswana</option>
+              <option value="Brazil">Brazil</option>
+              <option value="Brunei">Brunei</option>
+              <option value="Bulgaria">Bulgaria</option>
+              <option value="Burkina Faso">Burkina Faso</option>
+              <option value="Burundi">Burundi</option>
+              <option value="Cambodia">Cambodia</option>
+              <option value="Cameroon">Cameroon</option>
+              <option value="Canada">Canada</option>
+              <option value="Cape Verde">Cape Verde</option>
+              <option value="Central African Republic">Central African Republic</option>
+              <option value="Chad">Chad</option>
+              <option value="Chile">Chile</option>
+              <option value="China">China</option>
+              <option value="Colombia">Colombia</option>
+              <option value="Comoros">Comoros</option>
+              <option value="Congo">Congo</option>
+              <option value="Costa Rica">Costa Rica</option>
+              <option value="Croatia">Croatia</option>
+              <option value="Cuba">Cuba</option>
+              <option value="Cyprus">Cyprus</option>
+              <option value="Czech Republic">Czech Republic</option>
+              <option value="Denmark">Denmark</option>
+              <option value="Djibouti">Djibouti</option>
+              <option value="Dominica">Dominica</option>
+              <option value="Dominican Republic">Dominican Republic</option>
+              <option value="Ecuador">Ecuador</option>
+              <option value="Egypt">Egypt</option>
+              <option value="El Salvador">El Salvador</option>
+              <option value="Equatorial Guinea">Equatorial Guinea</option>
+              <option value="Eritrea">Eritrea</option>
+              <option value="Estonia">Estonia</option>
+              <option value="Eswatini">Eswatini</option>
+              <option value="Ethiopia">Ethiopia</option>
+              <option value="Fiji">Fiji</option>
+              <option value="Finland">Finland</option>
+              <option value="France">France</option>
+              <option value="Gabon">Gabon</option>
+              <option value="Gambia">Gambia</option>
+              <option value="Georgia">Georgia</option>
+              <option value="Germany">Germany</option>
+              <option value="Ghana">Ghana</option>
+              <option value="Greece">Greece</option>
+              <option value="Grenada">Grenada</option>
+              <option value="Guatemala">Guatemala</option>
+              <option value="Guinea">Guinea</option>
+              <option value="Guinea-Bissau">Guinea-Bissau</option>
+              <option value="Guyana">Guyana</option>
+              <option value="Haiti">Haiti</option>
+              <option value="Honduras">Honduras</option>
+              <option value="Hungary">Hungary</option>
+              <option value="Iceland">Iceland</option>
+              <option value="India">India</option>
+              <option value="Indonesia">Indonesia</option>
+              <option value="Iran">Iran</option>
+              <option value="Iraq">Iraq</option>
+              <option value="Ireland">Ireland</option>
+              <option value="Israel">Israel</option>
+              <option value="Italy">Italy</option>
+              <option value="Jamaica">Jamaica</option>
+              <option value="Japan">Japan</option>
+              <option value="Jordan">Jordan</option>
+              <option value="Kazakhstan">Kazakhstan</option>
+              <option value="Kenya">Kenya</option>
+              <option value="Kiribati">Kiribati</option>
+              <option value="Kuwait">Kuwait</option>
+              <option value="Kyrgyzstan">Kyrgyzstan</option>
+              <option value="Laos">Laos</option>
+              <option value="Latvia">Latvia</option>
+              <option value="Lebanon">Lebanon</option>
+              <option value="Lesotho">Lesotho</option>
+              <option value="Liberia">Liberia</option>
+              <option value="Libya">Libya</option>
+              <option value="Liechtenstein">Liechtenstein</option>
+              <option value="Lithuania">Lithuania</option>
+              <option value="Luxembourg">Luxembourg</option>
+              <option value="Madagascar">Madagascar</option>
+              <option value="Malawi">Malawi</option>
+              <option value="Malaysia">Malaysia</option>
+              <option value="Maldives">Maldives</option>
+              <option value="Mali">Mali</option>
+              <option value="Malta">Malta</option>
+              <option value="Marshall Islands">Marshall Islands</option>
+              <option value="Mauritania">Mauritania</option>
+              <option value="Mauritius">Mauritius</option>
+              <option value="Mexico">Mexico</option>
+              <option value="Micronesia">Micronesia</option>
+              <option value="Moldova">Moldova</option>
+              <option value="Monaco">Monaco</option>
+              <option value="Mongolia">Mongolia</option>
+              <option value="Montenegro">Montenegro</option>
+              <option value="Morocco">Morocco</option>
+              <option value="Mozambique">Mozambique</option>
+              <option value="Myanmar">Myanmar</option>
+              <option value="Namibia">Namibia</option>
+              <option value="Nauru">Nauru</option>
+              <option value="Nepal">Nepal</option>
+              <option value="Netherlands">Netherlands</option>
+              <option value="New Zealand">New Zealand</option>
+              <option value="Nicaragua">Nicaragua</option>
+              <option value="Niger">Niger</option>
+              <option value="Nigeria">Nigeria</option>
+              <option value="North Korea">North Korea</option>
+              <option value="North Macedonia">North Macedonia</option>
+              <option value="Norway">Norway</option>
+              <option value="Oman">Oman</option>
+              <option value="Pakistan">Pakistan</option>
+              <option value="Palau">Palau</option>
+              <option value="Panama">Panama</option>
+              <option value="Papua New Guinea">Papua New Guinea</option>
+              <option value="Paraguay">Paraguay</option>
+              <option value="Peru">Peru</option>
+              <option value="Philippines">Philippines</option>
+              <option value="Poland">Poland</option>
+              <option value="Portugal">Portugal</option>
+              <option value="Qatar">Qatar</option>
+              <option value="Romania">Romania</option>
+              <option value="Russia">Russia</option>
+              <option value="Rwanda">Rwanda</option>
+              <option value="Saudi Arabia">Saudi Arabia</option>
+              <option value="South Africa">South Africa</option>
+              <option value="South Korea">South Korea</option>
+              <option value="Spain">Spain</option>
+              <option value="Sri Lanka">Sri Lanka</option>
+              <option value="Sweden">Sweden</option>
+              <option value="Switzerland">Switzerland</option>
+              <option value="United Arab Emirates">United Arab Emirates</option>
+              <option value="United Kingdom">United Kingdom</option>
+              <option value="United States">United States</option>
+              <option value="Vietnam">Vietnam</option>
+              <option value="Zimbabwe">Zimbabwe</option>
+            </select>
+          </div>
+
+
+          <!-- State -->
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-1">State</label>
+            <input type="text" placeholder="State / Province" required="required"
+                   class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-400 transition"/>
+          </div>
+
+          <!-- Photo -->
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-1">Upload Photograph (Format: jpg, jpeg, png) <br> (Max. Size: 200kb)</label>
+            <input type="file" required="required"
+                   class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-400 transition"/>
+          </div>
+
+          <!-- Signature -->
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-1">Upload Signature (Format: jpg, jpeg, png) <br> (Max. Size: 200kb)</label>
+            <input type="file" required="required"
+                   class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-400 transition"/>
+          </div>
+
+          <!-- Password -->
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-1">Password</label>
+            <input name="password" type="password" [(ngModel)]="password" placeholder="Create a password" required="required"
+                   class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-400 transition"/>
+          </div>
+
+          <!-- Confirm Password -->
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-1">Confirm Password</label>
+            <input name="confirmPassword" type="password" [(ngModel)]="confirmPassword" placeholder="Confirm password" required="required"
+                   class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-400 transition"/>
+            
+            <p *ngIf="passwordMismatch" style="color: red;"> Pasword & Confirm Password are different </p>
+          </div>
+
+        </div>
+
+        <!-- Password Requirements -->
+                <div class="mt-6 p-4 bg-gradient-to-r from-emerald-50 to-green-50 
+                            rounded-xl border border-emerald-100">
+                    <p class="text-sm font-medium text-gray-700 mb-2">Password Requirements:</p>
+                    <div class="grid grid-cols-2 sm:grid-cols-4 gap-2">
+                        <div class="flex items-center">
+                            <div class="w-2 h-2 rounded-full bg-emerald-500 mr-2"></div>
+                            <span class="text-xs text-gray-600">8+ characters</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-2 h-2 rounded-full bg-emerald-500 mr-2"></div>
+                            <span class="text-xs text-gray-600">1 uppercase</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-2 h-2 rounded-full bg-emerald-500 mr-2"></div>
+                            <span class="text-xs text-gray-600">1 number</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-2 h-2 rounded-full bg-emerald-500 mr-2"></div>
+                            <span class="text-xs text-gray-600">1 symbol</span>
+                        </div>
+                    </div>
+                </div>
+
+        <!-- Terms -->
+        <div class="flex items-start gap-2 text-gray-600 text-sm mt-2">
+          <input type="checkbox" class="mt-1">
+          <span>I agree to the <a routerLink="/terms-conditions" target="_blank" class="text-purple-600 hover:underline">Terms & Conditions</a></span>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="flex flex-col sm:flex-row gap-4 mt-6">
+          <button type="submit"
+                  (click) = "verifyPassword()"
+                  class="flex-1 py-3 bg-purple-600 text-white rounded-xl font-semibold 
+                         hover:bg-purple-700 transition">
+            Create Account
+          </button>
+          <button type="reset"
+                  class="flex-1 py-3 border border-purple-300 rounded-xl text-purple-600 
+                         hover:bg-purple-50 transition">
+            Clear Form
+          </button>
+        </div>
+
+        <!-- Login Link -->
+        <p class="text-center text-gray-600 mt-4">
+          Already have an account?
+          <a routerLink="/login" class="text-purple-600 font-semibold hover:underline">Sign In</a>
+        </p>
+
+      </form>
+    </div>
+
+  </div>
+
+</div>

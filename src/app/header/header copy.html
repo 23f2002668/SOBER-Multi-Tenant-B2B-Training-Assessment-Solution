@@ -1,0 +1,78 @@
+<!-- Top Navigation Bar -->
+    <nav class="fixed top-0 left-0 right-0 z-50 
+                bg-gradient-to-r from-purple-600 via-pink-500 to-rose-700 backdrop-blur-2xl 
+                border-b-2 border-white">
+        <div class="px-8 py-5">
+            <div class="flex items-center justify-between">
+                <!-- Logo & Brand -->
+                <app-logo></app-logo>
+
+                <!-- Search & Notifications -->
+                <div class="flex items-center space-x-6">
+                    <div class="relative">
+                        <input type="text" 
+                               class="w-72 px-5 py-3 rounded-2xl 
+                                      bg-white/90 text-gray-800 placeholder-gray-500
+                                      pr-10
+                                      border-2 border-transparent
+                                      focus:outline-none focus:ring-4 focus:ring-pink-400/60
+                                      focus:border-pink-400
+                                      transition-all duration-200"
+                               placeholder="Search courses, students, analytics...">
+                        <div class="absolute right-4 top-1/2 transform -translate-y-1/2">
+                            <svg class="w-5 h-5 text-purple-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+                                      d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+                            </svg>
+                        </div>
+                    </div>
+
+                    <!-- Notification Bell -->
+                    <div class="relative">
+                        <button class="p-3 rounded-2xl bg-white/20 hover:bg-white/30 
+                                      transition-all duration-300 border-2 border-white/30">
+                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+                                      d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"/>
+                            </svg>
+                            <span class="absolute -top-2 -right-2 w-7 h-7 
+                                        bg-gradient-to-r from-pink-500 to-purple-600 rounded-full 
+                                        text-xs text-white flex items-center justify-center 
+                                        animate-pulse border-2 border-white">
+                                3
+                            </span>
+                        </button>
+                    </div>
+
+                    <!-- User Profile -->
+                    <div class="flex items-center space-x-4">
+                        <div class="text-right">
+                            <p class="font-bold text-white">Dr. Sarah Johnson</p>
+                            <p class="text-sm text-cyan-200">Administrator</p>
+                        </div>
+                        <div class="w-14 h-14 rounded-full 
+                                    bg-gradient-to-br from-yellow-400 via-pink-500 to-purple-600 
+                                    border-3 border-white/50 shadow-xl p-0.5">
+                            <div class="w-full h-full rounded-full bg-white flex items-center justify-center">
+                                <span class="text-lg font-bold 
+                                            bg-gradient-to-r from-pink-500 to-purple-600 
+                                            bg-clip-text text-transparent">
+                                    SJ
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Glow Blobs Background -->
+    <div class="fixed inset-0 overflow-hidden pointer-events-none">
+        <div class="absolute -top-20 -left-20 w-96 h-96 bg-pink-400 rounded-full blur-3xl opacity-40 
+                    animate-pulse-slow"></div>
+        <div class="absolute -bottom-20 -right-20 w-96 h-96 bg-indigo-400 rounded-full blur-3xl opacity-40 
+                    animate-pulse-slow animation-delay-2000"></div>
+        <div class="absolute top-1/2 left-1/3 w-80 h-80 bg-purple-400 rounded-full blur-3xl opacity-30 
+                    animate-pulse-slow animation-delay-4000"></div>
+    </div>

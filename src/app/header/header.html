@@ -1,0 +1,33 @@
+<!-- Top Navigation Bar -->
+    <nav class="fixed h-[10vh] top-0 left-0 right-0 z-50 bg-gradient-to-r from-purple-600 via-pink-500 to-rose-700 backdrop-blur-2xl border-b-2 border-white">                                                            <!-- Remove h-[10vh]-->
+        <div class="px-8 py-3">                                                                      <!-- py-5 -->
+            <div class="flex items-center justify-between">
+                <!-- Logo & Brand -->
+                <app-logo></app-logo>
+
+                <!-- Search & Notifications -->
+                <!-- Navigation Links -->
+
+                <div class="flex items-center text-white font-medium">
+                    <button routerLink="/" class="whitespace-nowrap mr-10 font-semibold text-xl hover:scale-110 transition-transform duration-300 origin-center" style="cursor: pointer;">Home</button>
+                    <button routerLink="/" [fragment]="'AboutAplication'" class="whitespace-nowrap mr-10 font-semibold text-xl hover:scale-110 transition-transform duration-300 origin-center" style="cursor: pointer;">About</button>
+                    <button routerLink="/" [fragment]="'OurPurpose'" class="whitespace-nowrap mr-10 font-semibold text-xl hover:scale-110 transition-transform duration-300 origin-center" style="cursor: pointer;">Purpose</button>
+                    <button routerLink="/" [fragment]="'ApplicationFeatures'" class="whitespace-nowrap mr-10 font-semibold text-xl hover:scale-110 transition-transform duration-300 origin-center" style="cursor: pointer;">Features</button>
+                    <button routerLink="/" [fragment]="'Pricing'" class="whitespace-nowrap mr-10 font-semibold text-xl hover:scale-110 transition-transform duration-300 origin-center" style="cursor: pointer;">Pricing</button>
+                    <button routerLink="/" [fragment]="'ContactUs'" class="whitespace-nowrap mr-10 font-semibold text-xl hover:scale-110 transition-transform duration-300 origin-center" style="cursor: pointer;">Contact Us</button>
+                    <button routerLink="/login" class="whitespace-nowrap mr-10 font-semibold text-xl hover:scale-110 transition-transform duration-300 origin-center" style="cursor: pointer;">Login</button>
+                    <button routerLink="/registration" class="whitespace-nowrap mr-1 font-semibold text-xl hover:scale-110 transition-transform duration-300 origin-center" style="cursor: pointer;">Register</button>
+                </div>            
+            </div>
+        </div>
+    </nav>
+
+    <!-- Glow Blobs Background -->
+    <div class="fixed inset-0 overflow-hidden pointer-events-none">
+        <div class="absolute -top-20 -left-20 w-96 h-96 bg-pink-400 rounded-full blur-3xl opacity-40 
+                    animate-pulse-slow"></div>
+        <div class="absolute -bottom-20 -right-20 w-96 h-96 bg-indigo-400 rounded-full blur-3xl opacity-40 
+                    animate-pulse-slow animation-delay-2000"></div>
+        <div class="absolute top-1/2 left-1/3 w-80 h-80 bg-purple-400 rounded-full blur-3xl opacity-30 
+                    animate-pulse-slow animation-delay-4000"></div>
+    </div>
