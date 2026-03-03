@@ -466,11 +466,15 @@ def feature_operations():
             con.commit()
 
             print("Adding Department successfully!")
-            return None
+            return jsonify({
+                'message': "Success"
+            }), 200
 
         except Exception as error:
             print(error)
-            return None
+            return jsonify({
+                'message': "Unable to create new department"
+            }), 503
 
     elif (title=="Employee" and operation=="ADD"):
         try:
@@ -514,11 +518,15 @@ def feature_operations():
             con.commit()
 
             print("Adding Department successfully!")
-            return None
+            return jsonify({
+                'message': "Success"
+            }), 200
 
         except Exception as error:
             print(error)
-            return None
+            return jsonify({
+                'message': "Unable to create new employee"
+            }), 503
 
     elif (title=="Training" and operation=="ADD"):
         try:
@@ -554,11 +562,15 @@ def feature_operations():
             con.commit()
 
             print("Adding Training successfully!")
-            return None
+            return jsonify({
+                'message': "Success"
+            }), 200
 
         except Exception as error:
             print(error)
-            return None
+            return jsonify({
+                'message': "Unable to create new training program"
+            }), 503
 
     elif (title=="Assessment" and operation=="ADD"):
         print("Creating Assessment . . .")
@@ -595,11 +607,79 @@ def feature_operations():
             con.commit()
 
             print("Adding Assessment successfully!")
-            return None
+            return jsonify({
+                'message': "Success"
+            }), 200
 
         except Exception as error:
             print(error)
-            return None
+            return jsonify({
+                'message': "Something went wrong"
+            }), 503
+
+@app.route("/manage-subscription", methods=["POST"])
+@jwt_required()
+def manage_subscription():
+    try:
+        data = request.json
+        adminId = data["adminId"]
+        newPlan = data["newPlan"]
+        subId = "SUB001"
+
+        if (newPlan == "Pro"):
+            subId = "SUB002"
+        elif (newPlan == "Enterprise"):
+            subId = "SUB003"
+
+        con = get_db()
+        cur = con.cursor()
+
+        query1 = """SELECT CompanyId FROM CompanyAdmin WHERE AdminId=?"""
+        cur.execute(query1, (adminId, ))
+        cmpId = (cur.fetchone())[0]
+
+        query2 = f"""SELECT SubscriptionID, CurrentDepartmentQuota, CurrentEmployeeQuota, CurrentTrainingQuota, CurrentAssessmentQuota FROM CompanyDetails WHERE CompanyId=?"""
+        cur.execute(query2, (cmpId, ))
+        result = cur.fetchone()
+        if result:
+          current_plan = result[0]
+          current_dept_quota = result[1]
+          current_emp_quota = result[2]
+          current_trn_quota = result[3]
+          current_ass_quota = result[4]
+
+        query3 = f"""SELECT DepartmentQuota, EmployeeQuota, TrainingQuota, AssessmentQuota FROM Subscriptions WHERE SubscriptionID=?"""
+        cur.execute(query3, (current_plan, ))
+        data_3 = cur.fetchone()
+
+        if data_3:
+            dept_quota = data_3[0]
+            emp_quota = data_3[1]
+            trn_quota = data_3[2]
+            ass_quota = data_3[3]
+
+        if (subId < current_plan):
+            print(subId, current_plan, True)
+            if (dept_quota < current_dept_quota):
+                current_dept_quota = 0
+            if (emp_quota < current_emp_quota):
+                current_emp_quota = 0
+            if (trn_quota < current_trn_quota):
+                current_trn_quota = 0
+            if (ass_quota < current_ass_quota):
+                current_ass_quota = 0
+
+        print(subId)
+
+        query4 = """UPDATE CompanyDetails SET SubscriptionId=?, CurrentDepartmentQuota=?, CurrentEmployeeQuota=?, CurrentTrainingQuota=?, CurrentAssessmentQuota=? WHERE CompanyId=?"""
+        cur.execute(query4, (subId, current_dept_quota, current_emp_quota, current_trn_quota, current_ass_quota, cmpId))
+        con.commit()
+
+        print("Success")
+
+
+    except Exception as e:
+        print("Exception :", e)
 
 def validate_subscription(cmp_id, title):
     con = get_db()

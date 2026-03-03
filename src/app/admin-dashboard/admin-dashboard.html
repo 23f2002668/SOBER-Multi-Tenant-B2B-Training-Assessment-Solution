@@ -473,7 +473,7 @@
       </div>
 
       <!-- Subscription Info Bar -->
-      <div class="mt-4 p-4 rounded-xl bg-white/5 border border-white/10" style="display: none;">
+      <div class="mt-4 p-4 rounded-xl bg-white/5 border border-white/10">
         <div class="flex items-center justify-between flex-wrap gap-4">
           <div class="flex items-center">
             <div class="w-10 h-10 rounded-lg bg-blue-500/20 flex items-center justify-center mr-3">
@@ -497,7 +497,7 @@
               <p class="text-white font-semibold"> {{ subscription() }} - ₹{{ price() }}/month</p>
             </div>
           </div>
-          <button class="px-6 py-2 bg-white/10 hover:bg-green-500/20 hover:text-green-400 hover:scale-105 hover:border-white rounded-xl text-white border-2 border-white transition-all duration-300">
+          <button (click)="show_manage_subscription()" class="px-6 py-2 bg-white/10 hover:bg-green-500/20 hover:text-green-400 hover:scale-105 hover:border-white rounded-xl text-white border-2 border-white transition-all duration-300">
             Manage Subscription
           </button>
         </div>
@@ -937,7 +937,7 @@
 
           <!-- Form Buttons -->
           <div class="flex justify-end space-x-4 pt-6 border-t border-white/10">
-            <button type="button" class="px-6 py-3 rounded-xl
+            <button (click)="resetAssessmentForm()" type="button" class="px-6 py-3 rounded-xl
                                                      bg-white/10 hover:bg-white/20 text-white
                                                      border border-white
                                                      transition-all duration-300 hover:scale-105">
@@ -1044,7 +1044,7 @@
 
           <!-- Form Buttons -->
           <div class="flex justify-end space-x-4 pt-6 border-t border-white/10">
-            <button type="button" class="px-6 py-3 rounded-xl
+            <button type="button" (click)="resetProgramForm()" class="px-6 py-3 rounded-xl
                                                      bg-white/10 hover:bg-white/20 text-white
                                                      border border-white
                                                      transition-all duration-300 hover:scale-105">
@@ -1056,7 +1056,7 @@
                                                      text-white font-bold
                                                      border border-white
                                                      transition-all duration-300 hover:scale-105">
-              Create Course
+              Create Program
             </button>
           </div>
         </form>
@@ -1232,7 +1232,7 @@
 
           <!-- Form Buttons -->
           <div class="flex justify-center space-x-6 pt-6 border-t border-white/10">
-            <button type="button" class="w-5/12 px-6 py-3 rounded-xl
+            <button type="button" (click)="resetEmployeeForm()" class="w-5/12 px-6 py-3 rounded-xl
                                                      bg-gradient-to-r from-red-400 to-red-600
                                                      border border-white text-white
                                                      transition-all duration-300 hover:scale-105">
@@ -1253,9 +1253,9 @@
   </div>
 }
 
-<!-- Add Department Modal -->
-@if (showAddDepartmentForm) {
-  <div id="departmentForm" class="fixed inset-0 z-[9999] flex items-center justify-center p-4 bg-black/70 backdrop-blur-lg">
+<!-- Change Subscription Plan -->
+@if (changePlan) {
+  <div id="subscriptionForm" class="fixed inset-0 z-[9999] flex items-center justify-center p-4 bg-black/70 backdrop-blur-lg">
     <div class="relative w-full max-w-2xl rounded-3xl
                                  bg-gradient-to-br from-blue-900 via-purple-900 to-pink-900
                                  border border-white shadow-[0_20px_50px_rgba(0,0,0,0.5)]">
@@ -1263,10 +1263,10 @@
         <!-- Modal Header -->
         <div class="flex justify-between items-center mb-8">
           <div>
-            <h2 class="text-2xl font-bold text-white">Add New Department</h2>
-            <p class="text-white/60 mt-1">Create a new department in your organization</p>
+            <h2 class="text-2xl font-bold text-white">Update Subscription Plan</h2>
+            <p class="text-white/60 mt-1">Update the subscription plan your organization</p>
           </div>
-          <button (click)="hideDepartmentForm()" class="w-10 h-10 rounded-full
+          <button (click)="hide_manage_subscription()" class="w-10 h-10 rounded-full
                                                  bg-white/10 hover:bg-white/20 text-white
                                                  flex items-center justify-center
                                                  transition-all duration-300 hover:scale-110
@@ -1277,56 +1277,36 @@
           </button>
         </div>
 
-        <!-- Department Form -->
-        <form (ngSubmit)="createDepartment()" class="space-y-6">
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <form (ngSubmit)="manage_subscription()" class="space-y-6">
             <div>
               <label class="block text-sm font-medium text-white/80 mb-2">
-                Department Code *
+                New Subscription
               </label>
-              <input
+              <select
                 type="text"
-                [(ngModel)]="newDeptCode"
-                name="newDeptCode"
-                class="w-full px-5 py-3 rounded-xl
+                [(ngModel)]="newPlan"
+                name="newPlan"
+                class="w-full h-10 px-5 py-3 rounded-xl
                                                      bg-white/10 text-white placeholder-white/40
                                                      border border-white
-                                                     focus:outline-none focus:ring-2 focus:ring-purple-400/50"
-                placeholder="e.g., ENG"
-              />
-            </div>
-            <div>
-              <label class="block text-sm font-medium text-white/80 mb-2">
-                Department Name *
-              </label>
-              <input
-                type="text"
-                [(ngModel)]="newDeptName"
-                name="newDeptName"
-                class="w-full px-5 py-3 rounded-xl
-                                                     bg-white/10 text-white placeholder-white/40
-                                                     border border-white
-                                                     focus:outline-none focus:ring-2 focus:ring-purple-400/50"
-                placeholder="e.g., Engineering"
-              />
-            </div>
+                                                     focus:outline-none focus:ring-2 focus:ring-purple-400/50">
+
+                    <option> Free </option>
+                    <option> Pro </option>
+                    <option> Enterprise </option>
+
+              </select>
           </div>
 
           <!-- Form Buttons -->
           <div class="flex justify-center space-x-6 pt-6 border-t border-white/10">
-            <button type="button" class="w-5/12 px-6 py-3 rounded-xl
-                                                     bg-gradient-to-r from-red-400 to-red-600
-                                                     border border-white text-white
-                                                     transition-all duration-300 hover:scale-105">
-              Clear Form
-            </button>
             <button type="submit" class="w-5/12 px-8 py-3 rounded-xl
                                                      bg-gradient-to-r from-blue-500 to-purple-600
                                                      hover:from-blue-600 hover:to-purple-700
                                                      text-white font-bold
                                                      border border-white
                                                      transition-all duration-300 hover:scale-105">
-              Create Department
+              Update Plan
             </button>
           </div>
         </form>
@@ -1334,6 +1314,8 @@
     </div>
   </div>
 }
+
+
 
 <!-- Enhanced Animations CSS -->
 <style>

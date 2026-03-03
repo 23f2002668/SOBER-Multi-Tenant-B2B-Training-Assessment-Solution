@@ -1,15 +1,18 @@
-
-# Core dependencies
+# Core Framework
 Flask==2.3.3
 Flask-CORS==4.0.0
 Flask-SQLAlchemy==3.1.1
-Flask-JWT-Extended==4.6.0
-Flask-Mail==0.9.1
-Flask-Login==0.6.3
-flask
-gunicorn
-flask-cors
-python-dotenv
-
-# Database
 SQLAlchemy==2.0.29
+
+# Authentication
+Flask-JWT-Extended==4.6.0
+Flask-Login==0.6.3
+
+# Email
+Flask-Mail==0.9.1
+
+# Production Server
+gunicorn==21.2.0
+
+# Environment Variables
+python-dotenv==1.0.1

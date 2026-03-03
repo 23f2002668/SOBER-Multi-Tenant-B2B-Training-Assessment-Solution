@@ -127,26 +127,6 @@ export class AdminDashboardComponent implements OnInit, AfterViewInit {
       this.showAddDepartmentForm = false;
     }
 
-    resetProgramForm(): void {
-      // Reset Program form fields
-      console.log('Resetting Program form');
-    }
-
-    resetAssessmentForm(): void {
-      // Reset Assessment form fields
-      console.log('Resetting Assessment form');
-    }
-
-    resetDepartmentForm(): void {
-      // Reset department form fields
-      console.log('Resetting department form');
-    }
-
-    resetEmployeeForm(): void {
-      // Reset employee form fields
-      console.log('Resetting employee form');
-    }
-
     newPgmName: string = "";
     newPgmId: string = "";
     newPgmDept: string = "";
@@ -163,10 +143,11 @@ export class AdminDashboardComponent implements OnInit, AfterViewInit {
     newAssName: string = "";
     newAssId: string = "";
     newAssDept: string = "";
+
     createAssessment(): void {
       // Handle Assessment creation
       console.log('Creating Assessment');
-      this.hideEmployeeForm();
+      this.hideAssessmentForm();
 
       const adminId: string = this.id();
       this.sendData("Assessment", "ADD", adminId);
@@ -176,7 +157,6 @@ export class AdminDashboardComponent implements OnInit, AfterViewInit {
     newDeptCode: string = "";
 
     createDepartment(): void {
-      alert('Creating Department : ' + this.newDeptName);
       this.hideDepartmentForm();
       const adminId: string = this.id();
       this.sendData("Department", "ADD", adminId);
@@ -191,11 +171,41 @@ export class AdminDashboardComponent implements OnInit, AfterViewInit {
     newEmpAssId: string = "";
 
     createEmployee(): void {
-      alert('Creating Employee : ' + this.newEmpName);
       console.log('Creating employee');
       this.hideEmployeeForm();
       const adminId: string = this.id();
       this.sendData("Employee", "ADD", adminId);
+    }
+
+    resetProgramForm(): void {
+      console.log('Resetting Program form');
+      this.newPgmName = "";
+      this.newPgmId = "";
+      this.newPgmDept = "";
+    }
+
+    resetAssessmentForm(): void {
+      console.log('Resetting Assessment form');
+      this.newAssName = "";
+      this.newAssId = "";
+      this.newAssDept = "";
+    }
+
+    resetDepartmentForm(): void {
+      console.log('Resetting department form');
+      this.newDeptName = "";
+      this.newDeptCode = "";
+    }
+
+    resetEmployeeForm(): void {
+      console.log('Resetting employee form');
+      this.newEmpName = "";
+      this.newEmpId = "";
+      this.newEmpMob = "";
+      this.newEmpEmail = "";
+      this.newEmpDeptId = "";
+      this.newEmpPgmId = "";
+      this.newEmpAssId = "";
     }
 
   /**
@@ -289,12 +299,17 @@ export class AdminDashboardComponent implements OnInit, AfterViewInit {
           // This prevents race condition #3 (refresh starting before post completes)
           await this.updateDashboardData();
 
+          alert("Successfully created!");
+
+          this.resetProgramForm();
+          this.resetAssessmentForm();
+          this.resetEmployeeForm()
+          this.resetDepartmentForm()
+
           // Step 4: Reset form fields after everything is done
           //this.resetFormFields(title);
-
-          console.log('✅ All operations completed successfully in sequence');
       }catch (error) {
-          console.error('❌ Error in sendData:', error);
+          console.error('Error in sendData:', error);
           alert("Operation failed! Please try again some time.");
       }
     }
@@ -551,6 +566,64 @@ export class AdminDashboardComponent implements OnInit, AfterViewInit {
         // Update with actual weekly data from your backend
         this.completionChart.update();
       }
+    }
+
+    changePlan = false;
+    newPlan: string = "";
+
+    hide_manage_subscription() {
+        this.changePlan = false;
+    }
+
+    show_manage_subscription() {
+      this.changePlan = true;
+    }
+
+    async manage_subscription(): Promise<void> {
+      if (!isPlatformBrowser(this.platformId)) {
+        return;
+      }
+
+      const adminId = this.id();
+
+      const token = this.usertoken_;
+
+      if (!token) {
+        console.log('No token found');
+        this.router.navigate(['/login']);
+        return;
+      }
+
+      const headers = new HttpHeaders({
+        'Authorization': `Bearer ${token}`,
+        'Content-Type': 'application/json'
+      });
+
+      // Create the data object to send
+      const Data = {
+        adminId: adminId,
+        newPlan: this.newPlan
+      };
+
+      const apiUrl = 'http://localhost:8000/manage-subscription';
+
+      try {
+        // Step 1: Post the data and wait for response
+        // This completes before moving to next step - prevents race condition #1
+        const response = await this.http.post<DataResponse>(
+          apiUrl, Data, { headers }
+        ).toPromise();
+
+        window.location.reload();
+
+        return;
+
+      }catch (error) {
+        console.error('Error in changing plan');
+        window.location.reload();
+        return;
+      }
+
     }
 
     logout() {
